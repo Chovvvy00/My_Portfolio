@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { useTheme } from '../composables/useTheme'
+import hrisDashboardImage from '../assets/screenshot/hris/Dashboard.png'
 
 const route = useRoute()
 const { theme, toggleTheme } = useTheme()
@@ -13,113 +14,115 @@ const projectNames = {
   'chat-app': 'Chat-App',
 }
 
+const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+
 const screenshots = [
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: 'src/assets/screenshot/hris/Dashboard.png',
+    image: hrisDashboardImage,
     detail: 'Main dashboard with metrics overview.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'hris',
     title: 'HRIS Dashboard',
-    image: '/demo/images/hris-dashboard.svg',
+    image: withBase('demo/images/hris-dashboard.svg'),
     detail: 'Main dashboard overview with employee and attendance metrics.',
   },
   {
     projectId: 'cookies-nest',
     title: 'Employee Management',
-    image: '/demo/images/employee-management.svg',
+    image: withBase('demo/images/employee-management.svg'),
     detail: 'Sample listing and management layout for app records.',
   },
   {
     projectId: 'chat-app',
     title: 'Chat App Interface',
-    image: '/demo/images/chat-interface.svg',
+    image: withBase('demo/images/chat-interface.svg'),
     detail: 'Real-time chat rooms with responsive conversation layout.',
   },
 ]
@@ -128,14 +131,14 @@ const videos = [
   {
     projectId: 'hris',
     title: 'HRIS Walkthrough',
-    src: '/demo/videos/hris-walkthrough.mp4',
-    poster: '/demo/posters/hris-video-poster.svg',
+    src: withBase('demo/videos/hris-walkthrough.mp4'),
+    poster: withBase('demo/posters/hris-video-poster.svg'),
   },
   {
     projectId: 'chat-app',
     title: 'Chat App Demo',
-    src: '/demo/videos/chat-app-demo.mp4',
-    poster: '/demo/posters/chat-video-poster.svg',
+    src: withBase('demo/videos/chat-app-demo.mp4'),
+    poster: withBase('demo/posters/chat-video-poster.svg'),
   },
 ]
 
@@ -395,3 +398,4 @@ const currentYear = new Date().getFullYear()
     </button>
   </div>
 </template>
+

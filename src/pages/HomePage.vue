@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 
 import { useTheme } from '../composables/useTheme'
+import resumeFile from '../assets/files/sample resume.pdf'
+import profilePhoto from '../assets/images/profile.jpg'
 
 const stats = [
   { value: '2+ Year', label: 'JavaScript Developer' },
@@ -129,13 +131,16 @@ const socials = [
   { label: 'GitHub', url: 'https://github.com/your-username', meta: 'github.com/your-username' },
 ]
 
-const profileImage = ref('src/assets/images/profile.jpg')
+const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+
+const profileImage = ref(profilePhoto)
+const profilePlaceholder = withBase('profile-placeholder.svg')
 const usingPlaceholder = ref(false)
 const { theme, toggleTheme } = useTheme()
 
 const handleProfileImageError = () => {
   if (!usingPlaceholder.value) {
-    profileImage.value = '/profile-placeholder.svg'
+    profileImage.value = profilePlaceholder
     usingPlaceholder.value = true
   }
 }
@@ -221,7 +226,7 @@ const currentYear = new Date().getFullYear()
             <a class="btn btn-primary" href="#projects">See My Work</a>
             <a
               class="btn btn-ghost"
-              href="src/assets/files/sample resume.pdf"
+              :href="resumeFile"
               target="_blank"
               rel="noreferrer"
               >See My Resume</a
