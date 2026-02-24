@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="98" y1="82" x2="606" y2="834" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1DB" />
+      <stop offset="1" stop-color="#E8F7F4" />
+    </linearGradient>
+    <linearGradient id="ring" x1="360" y1="198" x2="360" y2="404" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E" />
+      <stop offset="1" stop-color="#F06C3A" />
+    </linearGradient>
+  </defs>
+  <rect width="720" height="900" fill="url(#bg)" />
+  <circle cx="360" cy="308" r="102" fill="#F8E4C0" stroke="url(#ring)" stroke-width="12" />
+  <path d="M176 744C176 635.752 263.752 548 372 548H348C456.248 548 544 635.752 544 744V756H176V744Z" fill="#F9C86A" />
+  <rect x="116" y="662" width="488" height="148" rx="28" fill="#FFFFFF" fill-opacity="0.88" />
+  <text x="360" y="714" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#0F766E">
+    Add Your Photo
+  </text>
+  <text x="360" y="756" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#566072">
+    Replace public/profile-photo.jpg
+  </text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" fill="none">
+  <rect width="1280" height="800" rx="28" fill="#F6F2FF" />
+  <rect x="52" y="52" width="1176" height="696" rx="20" fill="#FFFFFF" stroke="#E7DEFF" />
+  <rect x="52" y="52" width="320" height="696" rx="20" fill="#FAF8FF" stroke="#E7DEFF" />
+  <rect x="82" y="88" width="260" height="34" rx="10" fill="#7A5AF8" opacity="0.2" />
+  <rect x="82" y="142" width="260" height="72" rx="12" fill="#FFFFFF" stroke="#E7DEFF" />
+  <rect x="82" y="226" width="260" height="72" rx="12" fill="#FFFFFF" stroke="#E7DEFF" />
+  <rect x="82" y="310" width="260" height="72" rx="12" fill="#FFFFFF" stroke="#E7DEFF" />
+  <rect x="398" y="88" width="800" height="50" rx="12" fill="#F8F9FC" stroke="#E6EAEE" />
+  <rect x="428" y="182" width="330" height="70" rx="14" fill="#FFF0E7" stroke="#F8C8B2" />
+  <rect x="838" y="272" width="330" height="70" rx="14" fill="#EAF9F7" stroke="#BFE8E2" />
+  <rect x="428" y="362" width="380" height="70" rx="14" fill="#FFF0E7" stroke="#F8C8B2" />
+  <rect x="838" y="452" width="330" height="70" rx="14" fill="#EAF9F7" stroke="#BFE8E2" />
+  <rect x="398" y="670" width="800" height="48" rx="12" fill="#FFFFFF" stroke="#E6EAEE" />
+  <text x="640" y="760" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#6C7482">
+    Chat Interface Screenshot Placeholder
+  </text>
+</svg>

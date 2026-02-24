@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#0F1F30" />
+  <rect x="70" y="62" width="1140" height="596" rx="20" fill="#172B40" stroke="#2D4868" />
+  <circle cx="640" cy="360" r="92" fill="#F06C3A" opacity="0.9" />
+  <path d="M614 309L702 360L614 411V309Z" fill="#FFFFFF" />
+  <text x="640" y="568" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#D7E7FA">
+    HRIS Walkthrough
+  </text>
+  <text x="640" y="612" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#9DB4D1">
+    Place video at /public/demo/videos/hris-walkthrough.mp4
+  </text>
+</svg>
