@@ -3,7 +3,54 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { useTheme } from '../composables/useTheme'
+
+import hrisLoginImage from '../assets/screenshot/hris/Login.png'
 import hrisDashboardImage from '../assets/screenshot/hris/Dashboard.png'
+import hrisNavbarImage from '../assets/screenshot/hris/navbar.png'
+import hrisEmployeesTabImage from '../assets/screenshot/hris/employees-tab.png'
+import hrisEmployeeDetailsImage from '../assets/screenshot/hris/Employee-Details.png'
+import hrisAppointmentTabImage from '../assets/screenshot/hris/Appointment-tab.png'
+import hrisAppointmentShowImage from '../assets/screenshot/hris/Appointment-show.png'
+import hrisPositionTabImage from '../assets/screenshot/hris/Position-Tab.png'
+import hrisItemImage from '../assets/screenshot/hris/Item.png'
+import hrisAttendanceTabImage from '../assets/screenshot/hris/attendance-tab.png'
+import hrisLeaveTabImage from '../assets/screenshot/hris/leave.png'
+import hrisLeaveSummaryImage from '../assets/screenshot/hris/leave-summary.png'
+import hrisShiftTabImage from '../assets/screenshot/hris/shift-tab.png'
+import hrisTravelAuthorityTabbImage from '../assets/screenshot/hris/Travel-Authority Tab.png'
+import hrisEmployeeAttendanceImage from '../assets/screenshot/hris/Employee Attendance.png'
+import hrisSalaryTableImage from '../assets/screenshot/hris/Salary-table.png'
+import hrisOfficeTabImage from '../assets/screenshot/hris/office-tab.png'
+import hrisActivityLogsTabImage from '../assets/screenshot/hris/Activity-logs tab.png'
+import hrisHolidayTabImage from '../assets/screenshot/hris/holiday-tab.png'
+
+import animalShelterHomeImage from '../assets/screenshot/animal_shelter/front-page.png'
+import animalShelterHomeImage2 from '../assets/screenshot/animal_shelter/front-page-2.png'
+import animalShelterHomeImage3 from '../assets/screenshot/animal_shelter/front-page-3.png'
+import animalShelterHomeImage4 from '../assets/screenshot/animal_shelter/adoption-process.png'
+import animalShelterHomeImage5 from '../assets/screenshot/animal_shelter/Adoption-Dog.png'
+import animalShelterHomeImage6 from '../assets/screenshot/animal_shelter/Adoption-Cat.png'
+import animalShelterHomeImage7 from '../assets/screenshot/animal_shelter/Adoption-Dog-index.png'
+import animalShelterHomeImage8 from '../assets/screenshot/animal_shelter/Adoption-Cat-index.png'
+import animalShelterHomeImage9 from '../assets/screenshot/animal_shelter/Posted_Dogs.png'
+import animalShelterHomeImage10 from '../assets/screenshot/animal_shelter/Posted_Cats.png'
+import animalShelterHomeImage11 from '../assets/screenshot/animal_shelter/Dog_Adoption_Request.png'
+import animalShelterHomeImage12 from '../assets/screenshot/animal_shelter/Rescue_Request_Form.png'
+import animalShelterHomeImage13 from '../assets/screenshot/animal_shelter/Dashboard.png'
+import animalShelterHomeImage14 from '../assets/screenshot/animal_shelter/About.png'
+import animalShelterHomeImage15 from '../assets/screenshot/animal_shelter/Pet_Posting.png'
+
+import chatAppImage from '../assets/screenshot/chat-app/register.png'
+import chatAppImage1 from '../assets/screenshot/chat-app/login.png'
+import chatAppImage2 from '../assets/screenshot/chat-app/light-mode.png'
+import chatAppImage3 from '../assets/screenshot/chat-app/emoji.png'
+import chatAppImage4 from '../assets/screenshot/chat-app/chat-box.png'
+import chatAppImage5 from '../assets/screenshot/chat-app/add-group.png'
+import chatAppImage6 from '../assets/screenshot/chat-app/chat-box-info.png'
+
+import hrisVideo from '../assets/videos/hris.mp4'
+import animelShelterVideo from '../assets/videos/animal_shelter.mp4'
+import chatApp from '../assets/videos/chat-app.mp4'
 
 const route = useRoute()
 const { theme, toggleTheme } = useTheme()
@@ -19,111 +66,249 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, ''
 const screenshots = [
   {
     projectId: 'hris',
+    title: 'HRIS Login Screen',
+    image: hrisLoginImage,
+    detail: 'Login screen for the HRIS application.',
+  },
+  {
+    projectId: 'hris',
+    title: 'HRIS Navbar',
+    image: hrisNavbarImage,
+    detail: 'Navigation bar for the HRIS application.',
+  },
+  {
+    projectId: 'hris',
     title: 'HRIS Dashboard',
     image: hrisDashboardImage,
     detail: 'Main dashboard with metrics overview.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Employees Tab',
+    image: hrisEmployeesTabImage,
+    detail: 'Employees tab showing employee list and management options.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Employee Details',
+    image: hrisEmployeeDetailsImage,
+    detail: 'Employee details view showing comprehensive employee information.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Appointment Tab',
+    image: hrisAppointmentTabImage,
+    detail: 'Appointment tab showing upcoming and past appointments.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Appointment Show',
+    image: hrisAppointmentShowImage,
+    detail: 'Detailed view of a specific appointment.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Position Tab',
+    image: hrisPositionTabImage,
+    detail: 'Position tab showing available job positions and details .',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Item',
+    image: hrisItemImage,
+    detail: 'Item management view showing available items and their details .',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Attendance Tab',
+    image: hrisAttendanceTabImage,
+    detail: 'Attendance tab showing employee attendance records.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Leave Tab',
+    image: hrisLeaveTabImage,
+    detail: 'Leave tab showing employee leave requests and approvals.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Leave Summary',
+    image: hrisLeaveSummaryImage,
+    detail: 'Leave summary showing employee leave statistics.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Shift Tab',
+    image: hrisShiftTabImage,
+    detail: 'Shift tab showing employee shift schedules.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Travel Authority Tab',
+    image: hrisTravelAuthorityTabbImage,
+    detail: 'Travel authority tab showing employee travel requests and approvals.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Employee Attendance',
+    image: hrisEmployeeAttendanceImage,
+    detail: 'Employee attendance tab showing employee attendance records.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Salary Tranche',
+    image: hrisSalaryTableImage,
+    detail: 'Salary Tranche showing employee salary details.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'Office Management',
+    image: hrisOfficeTabImage,
+    detail: 'Office tab showing list of offices in the HRIS system.',
   },
   {
     projectId: 'hris',
-    title: 'HRIS Dashboard',
-    image: withBase('demo/images/hris-dashboard.svg'),
-    detail: 'Main dashboard overview with employee and attendance metrics.',
+    title: 'HRIS Activity Logs Tab',
+    image: hrisActivityLogsTabImage,
+    detail: 'Real-time system activity logs for the information system.',
+  },
+  {
+    projectId: 'hris',
+    title: 'HRIS Holiday Tab',
+    image: hrisHolidayTabImage,
+    detail: 'Holiday tab showing employee holiday information.',
   },
   {
     projectId: 'cookies-nest',
-    title: 'Employee Management',
-    image: withBase('demo/images/employee-management.svg'),
-    detail: 'Sample listing and management layout for app records.',
+    title: 'Cookies Nest Animal Shelter Website Home Page',
+    image: animalShelterHomeImage,
+    detail: 'Home page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Home Page',
+    image: animalShelterHomeImage2,
+    detail: 'Home page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Home Page',
+    image: animalShelterHomeImage3,
+    detail: 'Home page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Adoption Process',
+    image: animalShelterHomeImage4,
+    detail: 'Adoption process page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Adoption Dog',
+    image: animalShelterHomeImage5,
+    detail: 'Adoption dog page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Adoption Cat',
+    image: animalShelterHomeImage6,
+    detail: 'Adoption cat page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Adoption Dog Index',
+    image: animalShelterHomeImage7,
+    detail: 'Adoption dog index page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Adoption Cat Index',
+    image: animalShelterHomeImage8,
+    detail: 'Adoption cat index page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Posted Dogs',
+    image: animalShelterHomeImage9,
+    detail: 'Posted dogs page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Posted Cats',
+    image: animalShelterHomeImage10,
+    detail: 'Posted cats page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Dog Adoption Request Form',
+    image: animalShelterHomeImage11,
+    detail: 'Dog adoption request form page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Rescue Request Form',
+    image: animalShelterHomeImage12,
+    detail: 'Rescue request form page of the Cookies Nest Animal Shelter Website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Dashboard',
+    image: animalShelterHomeImage13,
+    detail: 'Dashboard view for the cookies nest website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'About Us Page',
+    image: animalShelterHomeImage14,
+    detail: 'About us view for the cookies nest website.',
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Pet Posting Page',
+    image: animalShelterHomeImage15,
+    detail: 'Pet posting view for the cookies nest website.',
   },
   {
     projectId: 'chat-app',
-    title: 'Chat App Interface',
-    image: withBase('demo/images/chat-interface.svg'),
-    detail: 'Real-time chat rooms with responsive conversation layout.',
+    title: 'Chat App Home Page',
+    image: chatAppImage,
+    detail: 'Home page of the Chat App.',
+  },
+  {
+    projectId: 'chat-app',
+    title: 'Chat App Login Page',
+    image: chatAppImage1,
+    detail: 'Login page of the Chat App.',
+  },
+  {
+    projectId: 'chat-app',
+    title: 'Chat App Light Mode',
+    image: chatAppImage2,
+    detail: 'Light mode view of the Chat App.',
+  },
+  {
+    projectId: 'chat-app',
+    title: 'Chat App Emoji Picker',
+    image: chatAppImage3,
+    detail: 'Emoji picker view of the Chat App.',
+  },
+  {
+    projectId: 'chat-app',
+    title: 'Chat App Chat Box',
+    image: chatAppImage4,
+    detail: 'Chat box view of the Chat App.',
+  },
+  {
+    projectId: 'chat-app',
+    title: 'Chat App Add Group',
+    image: chatAppImage5,
+    detail: 'Add group view of the Chat App.',
+  },
+  {
+    projectId: 'chat-app',
+    title: 'Chat App Chat Box Info',
+    image: chatAppImage6,
+    detail: 'Chat box info view of the Chat App.',
   },
 ]
 
@@ -131,14 +316,20 @@ const videos = [
   {
     projectId: 'hris',
     title: 'HRIS Walkthrough',
-    src: withBase('demo/videos/hris-walkthrough.mp4'),
-    poster: withBase('demo/posters/hris-video-poster.svg'),
+    src: hrisVideo,
+    // poster: withBase('demo/posters/hris-video-poster.svg'),
   },
   {
     projectId: 'chat-app',
     title: 'Chat App Demo',
-    src: withBase('demo/videos/chat-app-demo.mp4'),
-    poster: withBase('demo/posters/chat-video-poster.svg'),
+    src: chatApp,
+    // poster: withBase('demo/posters/chat-video-poster.svg'),
+  },
+  {
+    projectId: 'cookies-nest',
+    title: 'Cookies Nest Animal Shelter Website Demo',
+    src: animelShelterVideo,
+    // poster: withBase('demo/posters/animal-shelter-video-poster.svg'),
   },
 ]
 
@@ -289,7 +480,7 @@ const currentYear = new Date().getFullYear()
     <main>
       <section class="section demo-hero reveal" style="--delay: 0.08s">
         <p class="section-eyebrow">Demo Gallery</p>
-        <h1>Watch Demo</h1>
+        <h1>Demo</h1>
         <p class="demo-filter">
           Showing:
           <strong>{{ selectedProjectLabel }}</strong>
@@ -344,10 +535,6 @@ const currentYear = new Date().getFullYear()
               Your browser does not support HTML5 video.
             </video>
             <h3>{{ item.title }}</h3>
-            <p class="demo-note">
-              Place your video here:
-              <code>{{ item.src }}</code>
-            </p>
           </article>
           <p v-if="filteredVideos.length === 0" class="demo-empty">
             No videos added yet for this project.
@@ -398,4 +585,3 @@ const currentYear = new Date().getFullYear()
     </button>
   </div>
 </template>
-

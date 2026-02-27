@@ -6,8 +6,8 @@
   --bg-mint: #edf7f6;
   --surface: rgba(255, 255, 255, 0.76);
   --surface-strong: rgba(255, 255, 255, 0.94);
-  --ink: #212529;
-  --ink-soft: #586276;
+  --ink: #131212;
+  --ink-soft: #2d313a;
   --line: #e8d7be;
   --primary: #f06c3a;
   --primary-deep: #d8592c;
@@ -393,7 +393,7 @@ main {
 
 .hero-copy {
   margin-top: 0.75rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   max-width: 66ch;
 }
 
@@ -813,7 +813,7 @@ h2 {
 }
 
 .lightbox-content img {
-  width: min(1080px, 86vw);
+  width: min(1440px, 90vw);
   max-height: 80vh;
   object-fit: contain;
   border-radius: 12px;

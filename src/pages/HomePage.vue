@@ -6,9 +6,9 @@ import resumeFile from '../assets/files/sample resume.pdf'
 import profilePhoto from '../assets/images/profile.jpg'
 
 const stats = [
-  { value: '2+ Year', label: 'JavaScript Developer' },
-  { value: '1+ Year', label: 'PHP Developer' },
-  { value: '1+ Year', label: 'Fullstack Developer' },
+  { value: '2+ Years', label: 'JavaScript Developer' },
+  { value: '1 Year', label: 'PHP Developer' },
+  { value: '1+ Years', label: 'Fullstack Developer' },
 ]
 
 const experiences = [
@@ -224,11 +224,7 @@ const currentYear = new Date().getFullYear()
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">See My Work</a>
-            <a
-              class="btn btn-ghost"
-              :href="resumeFile"
-              target="_blank"
-              rel="noreferrer"
+            <a class="btn btn-ghost" :href="resumeFile" target="_blank" rel="noreferrer"
               >See My Resume</a
             >
             <!-- <RouterLink class="btn btn-ghost-alt" to="/demo">Watch Demo</RouterLink> -->
@@ -296,7 +292,7 @@ const currentYear = new Date().getFullYear()
               <li v-for="tag in project.tags" :key="tag">{{ tag }}</li>
             </ul>
             <div class="project-links">
-              <RouterLink :to="`/demo?project=${project.id}#videos`">Watch Demo</RouterLink>
+              <RouterLink :to="`/demo?project=${project.id}`">Check Demo</RouterLink>
               <!-- <RouterLink :to="`/demo?project=${project.id}#screenshots`">See Images</RouterLink> -->
             </div>
           </article>
