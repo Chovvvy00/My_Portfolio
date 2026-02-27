@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 import { useTheme } from '../composables/useTheme'
-import resumeFile from '../assets/files/sample resume.pdf'
+import resumeFile from '../assets/files/resume.pdf'
 import profilePhoto from '../assets/images/profile.jpg'
 
 const stats = [
