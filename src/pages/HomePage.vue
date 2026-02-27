@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 import { useTheme } from '../composables/useTheme'
 import resumeFile from '../assets/files/resume.pdf'
-import profilePhoto from '../assets/images/profile.jpg'
+import profilePhoto from '../assets/images/profile.png'
 
 const stats = [
   { value: '2+ Years', label: 'JavaScript Developer' },
@@ -15,7 +15,7 @@ const experiences = [
   {
     role: 'Full-Stack Developer',
     company: 'City Government of Calamba',
-    period: 'Jan 2024 - Present',
+    period: 'Jan 2026 - Present',
     summary:
       'Built and maintained Information System, improving HR operations and data management.',
     stack: ['Javascript', 'Pug.js', 'Sails.js', 'Node.js', 'Fomantic UI', 'REST API'],
@@ -23,7 +23,7 @@ const experiences = [
   {
     role: 'Backend Developer',
     company: 'City Government of Calamba',
-    period: 'Apr 2023 - Dec 2024',
+    period: 'May 2023 - Dec 2025',
     summary:
       'Contributed to backend API development and database management for development of Human Resource Information System.',
     stack: ['Sails.js', 'MySQL', 'REST API'],
@@ -66,55 +66,53 @@ const projects = [
 const skills = [
   {
     name: 'Full-Stack JavaScript Development',
-    description: 'Build scalable web applications using JavaScript across frontend and backend.',
-    tools: 'JavaScript (ES6+), Node.js',
+    description: 'Build scalable web applications using JavaScript for both frontend and backend.',
+    tools: 'JavaScript, Node.js',
   },
   {
     name: 'Sails.js Backend Development',
-    description:
-      'Develop MVC-based REST APIs, authentication systems, and business logic using Sails.js framework.',
+    description: 'Develop REST APIs, authentication systems, and business logic with Sails.js.',
     tools: 'Sails.js, Waterline ORM, Passport.js',
   },
   {
-    name: 'PHP Development',
-    description: 'Build and maintain backend systems and integrate APIs using PHP.',
+    name: 'PHP Backend Development',
+    description: 'Create and maintain backend systems, integrating APIs efficiently with PHP.',
     tools: 'Laravel, Core PHP',
   },
   {
     name: 'Database Management',
-    description:
-      'Design relational databases, optimize queries, and manage structured data efficiently.',
-    tools: 'MySQL, Workbench, phpMyAdmin  ',
+    description: 'Design, optimize, and manage relational databases for structured data.',
+    tools: 'MySQL, phpMyAdmin, Workbench',
   },
   {
     name: 'Server-Side Rendering & Templating',
-    description: 'Create dynamic and maintainable UI using server-rendered templates.',
+    description: 'Create dynamic and maintainable UIs using server-rendered templates.',
     tools: 'Pug.js, HTML5',
   },
   {
     name: 'Responsive UI Development',
-    description: 'Develop clean, mobile-friendly interfaces with modern CSS frameworks.',
+    description:
+      'Design clean, responsive, and mobile-friendly interfaces using modern CSS frameworks.',
     tools: 'Fomantic UI, Bootstrap, CSS3',
   },
-
   {
     name: 'Version Control & Collaboration',
-    description: 'Manage codebases, collaborate with teams, and maintain structured workflows.',
+    description: 'Manage codebases and collaborate with teams using structured workflows.',
     tools: 'Git, GitHub',
   },
   {
     name: 'Web Fundamentals',
     description: 'Strong foundation in semantic HTML, structured CSS, and clean coding practices.',
-    tools: 'HTML, CSS',
+    tools: 'HTML5, CSS3',
   },
 ]
 
 const strengths = [
-  'Develop end-to-end web applications from database design to user interface.',
-  'Build scalable backend systems and RESTful APIs using JavaScript frameworks.',
-  'Create responsive, clean, and maintainable UI for desktop',
+  'Develop end-to-end web applications, from database design to user interface.',
+  'Build scalable backend systems and RESTful APIs using modern JavaScript frameworks.',
+  'Create clean, responsive, and maintainable web interfaces.',
   'Design structured databases and write optimized queries.',
-  'Quickly adapt to new frameworks, tools, and modern development practices.',
+  'Quickly adapt to new frameworks, tools, and development best practices.',
   'Collaborate effectively through Git workflows, pull requests, and code reviews.',
 ]
 
