@@ -121,14 +121,14 @@ const strengths = [
 const socials = [
   {
     label: 'Facebook',
-    url: 'https://facebook.com/your.profile',
-    meta: 'facebook.com/your.profile',
+    url: 'https://facebook.com/blahbla070',
+    meta: 'facebook.com/blahbla070',
   },
-  { label: 'Viber', url: 'viber://chat?number=%2B639000000000', meta: '+63 900 000 0000' },
-  { label: 'Gmail', url: 'mailto:yourname@gmail.com', meta: 'yourname@gmail.com' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/in/your-profile', meta: '/in/your-profile' },
-  { label: 'Indeed', url: 'https://www.indeed.com/cv/your-name', meta: 'indeed.com/cv/your-name' },
-  { label: 'GitHub', url: 'https://github.com/your-username', meta: 'github.com/your-username' },
+  { label: 'Viber', url: 'viber://chat?number=%2B639383682337', meta: '+63 938 368 2337' },
+  { label: 'Gmail', url: 'mailto:segonzales070@gmail.com', meta: 'segonzales070@gmail.com' },
+  // { label: 'LinkedIn', url: 'https://linkedin.com/in/your-profile', meta: '/in/your-profile' },
+  // { label: 'Indeed', url: 'https://www.indeed.com/cv/your-name', meta: 'indeed.com/cv/your-name' },
+  { label: 'GitHub', url: 'https://github.com/Chovvvy00', meta: 'github.com/Chovvvy00' },
 ]
 
 const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
@@ -340,7 +340,7 @@ const currentYear = new Date().getFullYear()
           I am open to full-stack and backend opportunities. Feel free to message me through email
           or any platform below.
         </p>
-        <a class="btn btn-primary" href="mailto:yourname@gmail.com">Send Message</a>
+        <a class="btn btn-primary" href="mailto:segonzales070@gmail.com">Send Message</a>
         <ul class="social-list">
           <li v-for="social in socials" :key="social.label">
             <a :href="social.url" target="_blank" rel="noreferrer">{{ social.label }}</a>
