@@ -112,7 +112,7 @@ const skills = [
 const strengths = [
   'Develop end-to-end web applications from database design to user interface.',
   'Build scalable backend systems and RESTful APIs using JavaScript frameworks.',
-  'Create responsive, clean, and maintainable UI for desktop and mobile.',
+  'Create responsive, clean, and maintainable UI for desktop',
   'Design structured databases and write optimized queries.',
   'Quickly adapt to new frameworks, tools, and modern development practices.',
   'Collaborate effectively through Git workflows, pull requests, and code reviews.',
