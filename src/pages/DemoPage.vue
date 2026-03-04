@@ -60,8 +60,36 @@ const projectNames = {
   'cookies-nest': 'Cookies Nest Animal Shelter Website',
   'chat-app': 'Chat-App',
 }
-
-const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+const projectOrder = ['hris', 'cookies-nest', 'chat-app']
+const projectMeta = {
+  hris: {
+    tagline: 'Backend-heavy HR operations platform for real government workflows.',
+    stack: ['Node.js', 'Sails.js', 'MySQL', 'Socket.io', 'Pug.js'],
+    reviewPoints: [
+      'Attendance and leave lifecycle workflows',
+      'Data-heavy admin screens and tabular interactions',
+      'Business-rule driven employee management modules',
+    ],
+  },
+  'cookies-nest': {
+    tagline: 'Core PHP and Bootstrap platform for adoption and rescue request management.',
+    stack: ['Core PHP', 'Bootstrap', 'HTML', 'JavaScript'],
+    reviewPoints: [
+      'Public funnel for pet browsing and request submissions',
+      'Server-side validation on forms and user inputs',
+      'Simple admin workflows for operational handling',
+    ],
+  },
+  'chat-app': {
+    tagline: 'Real-time communication app focused on messaging UX and event flow.',
+    stack: ['Vue.js', 'Laravel', 'MySQL', 'Realtime Messaging'],
+    reviewPoints: [
+      'Authentication and conversation management',
+      'Live message updates and responsive chat screens',
+      'Group and emoji interaction features',
+    ],
+  },
+}
 
 const screenshots = [
   {
@@ -310,28 +338,31 @@ const screenshots = [
     image: chatAppImage6,
     detail: 'Chat box info view of the Chat App.',
   },
-]
+].map((item, index) => ({
+  id: `screen-${index + 1}`,
+  ...item,
+}))
 
 const videos = [
   {
     projectId: 'hris',
     title: 'HRIS Walkthrough',
     src: hrisVideo,
-    // poster: withBase('demo/posters/hris-video-poster.svg'),
   },
   {
     projectId: 'chat-app',
     title: 'Chat App Demo',
     src: chatApp,
-    // poster: withBase('demo/posters/chat-video-poster.svg'),
   },
   {
     projectId: 'cookies-nest',
     title: 'Cookies Nest Animal Shelter Website Demo',
     src: animelShelterVideo,
-    // poster: withBase('demo/posters/animal-shelter-video-poster.svg'),
   },
-]
+].map((item, index) => ({
+  id: `video-${index + 1}`,
+  ...item,
+}))
 
 const selectedProject = computed(() => {
   const project = route.query.project
@@ -352,6 +383,59 @@ const filteredVideos = computed(() => {
 const selectedProjectLabel = computed(() => {
   return selectedProject.value ? projectNames[selectedProject.value] : 'All Projects'
 })
+const selectedProjectMeta = computed(() => {
+  if (!selectedProject.value) return null
+
+  return {
+    id: selectedProject.value,
+    name: projectNames[selectedProject.value],
+    ...projectMeta[selectedProject.value],
+  }
+})
+
+const projectTabs = computed(() => [
+  { id: '', label: 'All Projects', to: { name: 'demo' } },
+  ...projectOrder.map((projectId) => ({
+    id: projectId,
+    label: projectNames[projectId],
+    to: { name: 'demo', query: { project: projectId } },
+  })),
+])
+
+const projectOverviewCards = computed(() =>
+  projectOrder.map((projectId) => ({
+    id: projectId,
+    name: projectNames[projectId],
+    tagline: projectMeta[projectId]?.tagline,
+    screenshotCount: screenshots.filter((item) => item.projectId === projectId).length,
+    videoCount: videos.filter((item) => item.projectId === projectId).length,
+  })),
+)
+
+const groupedScreenshots = computed(() => {
+  const targets = selectedProject.value ? [selectedProject.value] : projectOrder
+  return targets
+    .map((projectId) => ({
+      projectId,
+      label: projectNames[projectId],
+      items: screenshots.filter((item) => item.projectId === projectId),
+    }))
+    .filter((group) => group.items.length > 0)
+})
+
+const groupedVideos = computed(() => {
+  const targets = selectedProject.value ? [selectedProject.value] : projectOrder
+  return targets
+    .map((projectId) => ({
+      projectId,
+      label: projectNames[projectId],
+      items: videos.filter((item) => item.projectId === projectId),
+    }))
+    .filter((group) => group.items.length > 0)
+})
+
+const totalScreenshotCount = screenshots.length
+const totalVideoCount = videos.length
 
 const isLightboxOpen = ref(false)
 const activeImageIndex = ref(0)
@@ -365,6 +449,19 @@ const openLightbox = (index) => {
   activeImageIndex.value = index
   isLightboxOpen.value = true
 }
+
+const openLightboxByItem = (item) => {
+  const index = filteredScreenshots.value.findIndex((entry) => entry.id === item.id)
+  if (index === -1) return
+  openLightbox(index)
+}
+
+const isFilterActive = (projectId) => {
+  if (!projectId) return !selectedProject.value
+  return selectedProject.value === projectId
+}
+
+const getProjectLabel = (projectId) => projectNames[projectId] || 'Project'
 
 const closeLightbox = () => {
   isLightboxOpen.value = false
@@ -431,6 +528,7 @@ const currentYear = new Date().getFullYear()
       <RouterLink class="brand" to="/">Awin.dev</RouterLink>
       <div class="topbar-actions">
         <nav>
+          <a href="#overview">Overview</a>
           <a href="#screenshots">Screenshots</a>
           <a href="#videos">Videos</a>
           <RouterLink to="/">Back Home</RouterLink>
@@ -478,68 +576,149 @@ const currentYear = new Date().getFullYear()
     </header>
 
     <main>
-      <section class="section demo-hero reveal" style="--delay: 0.08s">
+      <section id="overview" class="section demo-hero reveal" style="--delay: 0.08s">
         <p class="section-eyebrow">Demo Gallery</p>
-        <h1>Demo</h1>
+        <h1>Project Demo Center</h1>
+        <p class="hero-copy">
+          Recruiter-first walkthrough of my shipped systems. Filter by project and quickly inspect
+          screenshots, workflows, and demo videos.
+        </p>
+
+        <div class="demo-hero-stats">
+          <article class="demo-stat-card">
+            <p class="demo-stat-label">Currently Viewing</p>
+            <p class="demo-stat-value">{{ selectedProjectLabel }}</p>
+          </article>
+          <article class="demo-stat-card">
+            <p class="demo-stat-label">Screenshots</p>
+            <p class="demo-stat-value">{{ filteredScreenshots.length }} / {{ totalScreenshotCount }}</p>
+          </article>
+          <article class="demo-stat-card">
+            <p class="demo-stat-label">Videos</p>
+            <p class="demo-stat-value">{{ filteredVideos.length }} / {{ totalVideoCount }}</p>
+          </article>
+        </div>
+
+        <div class="demo-project-picker">
+          <p class="demo-picker-label">Filter by project</p>
+          <div class="demo-filter-chips">
+            <RouterLink
+              v-for="tab in projectTabs"
+              :key="tab.id || 'all-projects'"
+              :to="tab.to"
+              class="demo-chip"
+              :class="{ active: isFilterActive(tab.id) }"
+            >
+              {{ tab.label }}
+            </RouterLink>
+          </div>
+        </div>
+
+        <article v-if="selectedProjectMeta" class="demo-focus-card">
+          <p class="demo-focus-label">Review Focus</p>
+          <h2>{{ selectedProjectMeta.name }}</h2>
+          <p>{{ selectedProjectMeta.tagline }}</p>
+          <ul class="demo-focus-stack">
+            <li v-for="tech in selectedProjectMeta.stack" :key="tech">{{ tech }}</li>
+          </ul>
+          <ul class="demo-focus-points">
+            <li v-for="point in selectedProjectMeta.reviewPoints" :key="point">{{ point }}</li>
+          </ul>
+        </article>
+
+        <div v-else class="demo-overview-grid">
+          <article class="demo-overview-card" v-for="card in projectOverviewCards" :key="card.id">
+            <h3>{{ card.name }}</h3>
+            <p>{{ card.tagline }}</p>
+            <p class="demo-overview-meta">
+              {{ card.screenshotCount }} screens | {{ card.videoCount }}
+              {{ card.videoCount === 1 ? 'video' : 'videos' }}
+            </p>
+            <RouterLink class="demo-overview-link" :to="{ name: 'demo', query: { project: card.id } }"
+              >View Project</RouterLink
+            >
+          </article>
+        </div>
+
         <p class="demo-filter">
           Showing:
           <strong>{{ selectedProjectLabel }}</strong>
         </p>
-        <p class="hero-copy">
-          This page stores your project screenshots and demo videos in one place. Replace the
-          placeholder files inside <code>public/demo</code> with your actual media.
-        </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#videos">Go To Videos</a>
+          <a class="btn btn-primary" href="#screenshots">View Screenshots</a>
+          <a class="btn btn-ghost" href="#videos">Watch Videos</a>
           <RouterLink class="btn btn-ghost" to="/">Back To Portfolio</RouterLink>
-          <RouterLink class="btn btn-ghost-alt" to="/demo">Show All</RouterLink>
+          <RouterLink class="btn btn-ghost-alt" :to="{ name: 'demo' }">Show All</RouterLink>
         </div>
       </section>
 
       <section id="screenshots" class="section reveal" style="--delay: 0.12s">
-        <p class="section-eyebrow">Screenshots</p>
-        <h2>Application Screens</h2>
-        <div class="demo-image-scroll">
-          <div class="demo-grid demo-image-grid">
-            <article
-              class="demo-card"
-              v-for="(item, index) in filteredScreenshots"
-              :key="item.title"
-            >
-              <button
-                class="demo-image-btn"
-                type="button"
-                @click="openLightbox(index)"
-                :aria-label="`Open ${item.title} in fullscreen`"
-              >
-                <img :src="item.image" :alt="item.title" />
-              </button>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.detail }}</p>
-              <p class="demo-image-hint">Click image to view fullscreen</p>
-            </article>
-            <p v-if="filteredScreenshots.length === 0" class="demo-empty">
-              No screenshots added yet for this project.
+        <div class="demo-section-head">
+          <div>
+            <p class="section-eyebrow">Screenshots</p>
+            <h2>Application Screens</h2>
+            <p class="demo-section-note">
+              Click any screen to inspect details in fullscreen mode.
             </p>
           </div>
+          <p class="demo-section-count">{{ filteredScreenshots.length }} total</p>
         </div>
+
+        <div v-if="groupedScreenshots.length" class="demo-group-list">
+          <article class="demo-group-card" v-for="group in groupedScreenshots" :key="group.projectId">
+            <div class="demo-group-head">
+              <h3>{{ group.label }}</h3>
+              <span>{{ group.items.length }} screens</span>
+            </div>
+            <div class="demo-grid demo-image-grid">
+              <article class="demo-card" v-for="item in group.items" :key="item.id">
+                <button
+                  class="demo-image-btn"
+                  type="button"
+                  @click="openLightboxByItem(item)"
+                  :aria-label="`Open ${item.title} in fullscreen`"
+                >
+                  <img :src="item.image" :alt="item.title" />
+                </button>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.detail }}</p>
+                <p class="demo-image-hint">Click image to view fullscreen</p>
+              </article>
+            </div>
+          </article>
+        </div>
+        <p v-else class="demo-empty">No screenshots added yet for this project.</p>
       </section>
 
       <section id="videos" class="section reveal" style="--delay: 0.16s">
-        <p class="section-eyebrow">Videos</p>
-        <h2>Recorded Walkthroughs</h2>
-        <div class="demo-grid demo-video-grid">
-          <article class="demo-card" v-for="item in filteredVideos" :key="item.title">
-            <video class="demo-video" controls preload="none" :poster="item.poster">
-              <source :src="item.src" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-            <h3>{{ item.title }}</h3>
-          </article>
-          <p v-if="filteredVideos.length === 0" class="demo-empty">
-            No videos added yet for this project.
-          </p>
+        <div class="demo-section-head">
+          <div>
+            <p class="section-eyebrow">Videos</p>
+            <h2>Recorded Walkthroughs</h2>
+            <p class="demo-section-note">
+              Video recordings for end-to-end navigation and key feature flows.
+            </p>
+          </div>
+          <p class="demo-section-count">{{ filteredVideos.length }} total</p>
         </div>
+        <div v-if="groupedVideos.length" class="demo-group-list">
+          <article class="demo-group-card" v-for="group in groupedVideos" :key="group.projectId">
+            <div class="demo-group-head">
+              <h3>{{ group.label }}</h3>
+              <span>{{ group.items.length }} {{ group.items.length === 1 ? 'video' : 'videos' }}</span>
+            </div>
+            <div class="demo-grid demo-video-grid">
+              <article class="demo-card" v-for="item in group.items" :key="item.id">
+                <video class="demo-video" controls preload="none" :poster="item.poster">
+                  <source :src="item.src" type="video/mp4" />
+                  Your browser does not support HTML5 video.
+                </video>
+                <h3>{{ item.title }}</h3>
+              </article>
+            </div>
+          </article>
+        </div>
+        <p v-else class="demo-empty">No videos added yet for this project.</p>
       </section>
     </main>
 
@@ -570,7 +749,10 @@ const currentYear = new Date().getFullYear()
     <figure class="lightbox-content">
       <img :src="lightboxImage.image" :alt="lightboxImage.title" />
       <figcaption>
-        <strong>{{ lightboxImage.title }}</strong>
+        <div class="lightbox-caption-copy">
+          <strong>{{ lightboxImage.title }}</strong>
+          <small>{{ getProjectLabel(lightboxImage.projectId) }}</small>
+        </div>
         <span>{{ activeImageIndex + 1 }} / {{ filteredScreenshots.length }}</span>
       </figcaption>
     </figure>
