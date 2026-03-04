@@ -12,6 +12,10 @@ const experiences = [
     period: 'Jan 2026 - Present',
     summary:
       'Built and maintained Information System, improving HR operations and data management.',
+    highlights: [
+      'Maintained and enhanced HRIS modules used in daily government operations.',
+      'Improved stability and reporting flow through backend and database updates.',
+    ],
     stack: ['Javascript', 'Pug.js', 'Sails.js', 'Node.js', 'Fomantic UI', 'REST API'],
   },
   {
@@ -20,6 +24,10 @@ const experiences = [
     period: 'May 2023 - Dec 2025',
     summary:
       'Contributed to backend API development and database management for development of Human Resource Information System.',
+    highlights: [
+      'Developed API endpoints and backend logic for attendance and leave workflows.',
+      'Worked on MySQL query improvements for faster HR report generation.',
+    ],
     stack: ['Sails.js', 'MySQL', 'REST API'],
   },
   {
@@ -27,6 +35,10 @@ const experiences = [
     company: 'City Government of Calamba',
     period: 'Jan 2023 - Apr 2023',
     summary: 'Built Position Description Form generator, improving HR PDF workflow efficiency.',
+    highlights: [
+      'Delivered working HR form modules and PDF generation flows during internship.',
+      'Improved internal process speed through automation-focused web tools.',
+    ],
     stack: ['Javascript', 'Sails.js', 'Bootstrap', 'REST API'],
   },
 ]
@@ -37,13 +49,48 @@ const projects = [
     type: 'Information System',
     title: 'Human Resource Information System',
     tech: ['Node.js', 'MySQL', 'Socket.io', 'REST APIs'],
+    problem:
+      'HR workflows were spread across manual processes and disconnected records, causing delays and reporting bottlenecks.',
+    role:
+      'Designed backend logic and delivered full-stack HR modules for attendance, leave, and reporting workflows.',
     whatIBuilt: [
       'Leave management system',
       'Attendance computation logic',
       'Automated DTR PDF generation',
       'Business validation rules',
     ],
-    impact: ['Improved report performance by 30-40%', 'Reduced manual HR processes'],
+    challenges: [
+      'Complex attendance and leave policy rules needed deterministic validation.',
+      'Large datasets slowed report generation in peak usage.',
+      'Approval and attendance updates needed real-time visibility.',
+    ],
+    challengeSolutions: [
+      {
+        challenge: 'Complex leave and attendance rules across multiple HR scenarios.',
+        solution:
+          'Implemented centralized validation and business-rule checks in backend service layers.',
+      },
+      {
+        challenge: 'Slow reporting performance on larger operational datasets.',
+        solution:
+          'Optimized query paths and report generation flow to reduce response time and load.',
+      },
+      {
+        challenge: 'Need for immediate visibility on approvals and attendance changes.',
+        solution:
+          'Integrated Socket.io event updates for real-time status synchronization.',
+      },
+    ],
+    outcomes: [
+      'Improved report performance by 30-40%.',
+      'Reduced manual HR processing and operational delays.',
+      'Centralized HR workflows into one maintainable system.',
+    ],
+    repository: {
+      href: 'https://github.com/Chovvvy00?tab=repositories',
+      label: 'GitHub: HRIS Repository (Private)',
+      note: 'Private production repository due government system ownership.',
+    },
     architecture: [
       {
         layer: 'Backend API Layer',
@@ -80,12 +127,48 @@ const projects = [
     type: 'Animal Welfare Portal',
     title: 'Cookies Nest Animal Shelter Website',
     tech: ['Core PHP (Hardcoded)', 'Bootstrap', 'HTML', 'JavaScript'],
+    problem:
+      'The shelter needed a simple online platform to handle rescue and adoption requests instead of manual intake only.',
+    role:
+      'Built the end-to-end web platform using core PHP and Bootstrap, including request flows and admin-facing pages.',
     whatIBuilt: [
       'Public-facing pet browsing interface',
       'Rescue and adoption request forms with server-side validation',
       'Contact form with email notifications',
       'Basic admin dashboard for managing requests',
     ],
+    challenges: [
+      'Implemented maintainable structure without modern framework abstractions.',
+      'Kept forms clear and reliable for non-technical users.',
+      'Delivered responsive pages quickly for mobile and desktop usage.',
+    ],
+    challengeSolutions: [
+      {
+        challenge: 'No framework abstractions while building complete request workflows.',
+        solution:
+          'Structured core PHP handlers and reusable form logic for maintainability and speed.',
+      },
+      {
+        challenge: 'Users needed clear, low-friction forms for rescue and adoption.',
+        solution:
+          'Used responsive Bootstrap layouts and server-side validation for reliable submissions.',
+      },
+      {
+        challenge: 'Needed mobile-ready UI with limited implementation complexity.',
+        solution:
+          'Applied component-style Bootstrap sections and simplified frontend interactions.',
+      },
+    ],
+    outcomes: [
+      'Enabled online rescue and adoption request submission.',
+      'Reduced manual coordination with structured request records.',
+      'Improved accessibility through responsive Bootstrap interfaces.',
+    ],
+    repository: {
+      href: 'https://github.com/Chovvvy00?tab=repositories',
+      label: 'GitHub: Cookies Nest Repository',
+      note: 'Repository details can be shared based on project ownership permissions.',
+    },
     architecture: [
       {
         layer: 'Backend API Layer',
@@ -114,8 +197,47 @@ const projects = [
     type: 'Real-Time Chat Application',
     title: 'Chat-App',
     tech: ['Vue.js', 'Laravel', 'MySQL', 'Real-Time Communication'],
-    summary: 'A real-time chat application built with Vue.js, laravel and MySQL.',
-    tags: ['Vue.js', 'Laravel', 'MySQL', 'Real-Time Communication'],
+    problem:
+      'Users needed instant communication features with reliable messaging, group flow, and smooth conversation handling.',
+    role:
+      'Implemented frontend chat flows and integrated backend APIs to support real-time message delivery and conversation management.',
+    whatIBuilt: [
+      'Authentication and conversation interface flows',
+      'Live messaging screens with responsive conversation layout',
+      'Group creation workflow and emoji picker integration',
+      'Message retrieval and delivery connected to backend events',
+    ],
+    challenges: [
+      'Maintained message state consistency during real-time updates.',
+      'Coordinated auth, conversation, and message lifecycle logic.',
+      'Balanced responsiveness and readability in chat-heavy screens.',
+    ],
+    challengeSolutions: [
+      {
+        challenge: 'Real-time message state could desync across active conversations.',
+        solution:
+          'Used event-driven updates and consistent message retrieval patterns between frontend and backend.',
+      },
+      {
+        challenge: 'Authentication and conversation flow needed predictable API behavior.',
+        solution:
+          'Structured Laravel endpoint integration with clear request/response handling in Vue.',
+      },
+      {
+        challenge: 'Chat UI needed responsiveness without losing conversation readability.',
+        solution:
+          'Designed responsive message layout and focused interaction patterns for core chat actions.',
+      },
+    ],
+    outcomes: [
+      'Delivered real-time messaging with group chat support.',
+      'Improved UX with instant message updates and interaction feedback.',
+      'Strengthened event-driven architecture and API integration skills.',
+    ],
+    repository: {
+      href: 'https://github.com/Chovvvy00/Chat-APP',
+      label: 'GitHub: Chat-APP Repository',
+    },
     architecture: [
       {
         layer: 'Backend API Layer',
@@ -152,29 +274,19 @@ const skillGroups = [
   {
     title: 'Backend',
     items: [
-      { name: 'Node.js (Sails.js)', logo: 'skills/nodejs.svg' },
+      { name: 'Node.js', logo: 'skills/nodejs.svg' },
       { name: 'REST APIs', badge: 'API' },
-      { name: 'MVC', badge: 'MVC' },
     ],
   },
   {
     title: 'Database',
-    items: [
-      { name: 'MySQL', logo: 'skills/mysql.svg' },
-      { name: 'Query Optimization', badge: 'QRY' },
-    ],
+    items: [{ name: 'MySQL', logo: 'skills/mysql.svg' }],
   },
   {
-    title: 'Currently Learning',
+    title: 'Learning',
     items: [
       { name: 'React', logo: 'skills/react.svg' },
-      { name: 'Next.js', logo: 'skills/nextjs.svg' },
-      { name: 'NestJS', logo: 'skills/nestjs.svg' },
-      { name: 'Express.js', logo: 'skills/express.svg' },
-      { name: 'FastAPI', logo: 'skills/fastapi.svg' },
       { name: 'Python', logo: 'skills/python.svg' },
-      { name: 'Docker', logo: 'skills/docker.svg' },
-      { name: 'TypeScript', logo: 'skills/typescript.svg' },
     ],
   },
 ]
@@ -191,33 +303,36 @@ const currentlyBuilding = [
   },
 ]
 
-const aboutMetrics = [
-  { value: '2+ Years', label: 'Production system ownership' },
-  { value: '30-40%', label: 'HRIS report performance improvement' },
-  { value: '3 Roles', label: 'Intern to backend to full-stack progression' },
+const developmentProcess = [
+  {
+    step: '1. Discover',
+    detail: 'Clarify business requirements, user flow, and success criteria before implementation.',
+  },
+  {
+    step: '2. Design System Logic',
+    detail: 'Define API contracts, validation rules, and database structure for reliable behavior.',
+  },
+  {
+    step: '3. Build and Integrate',
+    detail: 'Implement modules incrementally and connect frontend interfaces to backend services.',
+  },
+  {
+    step: '4. Test and Optimize',
+    detail: 'Validate core scenarios, refine edge cases, and improve performance for production use.',
+  },
 ]
 
-const aboutPrinciples = [
-  {
-    title: 'Backend-first decisions',
-    detail:
-      'I design API contracts, validation rules, and database structure before adding UI complexity.',
-  },
-  {
-    title: 'Business logic ownership',
-    detail:
-      'I translate process requirements into deterministic system rules for attendance, leave, and reporting.',
-  },
-  {
-    title: 'Production-ready delivery',
-    detail:
-      'I prioritize maintainability, error handling, and clear architecture to support long-term system growth.',
-  },
-  {
-    title: 'Continuous upskilling',
-    detail:
-      'I am actively building React-based admin interfaces while strengthening Python backend fundamentals.',
-  },
+const aboutSummary = {
+  caption: 'I build reliable backend systems that support daily operations and measurable outcomes.',
+  who: 'Backend-strong developer with 2+ years of hands-on experience building and maintaining production web systems.',
+  target: 'Target Role: Junior Full Stack Developer (Node.js | JavaScript).',
+  growth: 'Next Focus: React frontend architecture and Python backend fundamentals.',
+}
+
+const aboutHighlights = [
+  'I design APIs and business rules before UI complexity.',
+  'I own logic validation, data flow, and maintainability decisions.',
+  'I actively build modern projects to close skill gaps quickly.',
 ]
 
 const socials = [
@@ -329,6 +444,7 @@ const currentYear = new Date().getFullYear()
       <div class="topbar-actions">
         <nav>
           <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
           <a href="#experience">Experience</a>
           <a href="#building">Currently Building</a>
           <a href="#skills">Skills</a>
@@ -383,11 +499,11 @@ const currentYear = new Date().getFullYear()
         <div class="hero-content">
           <h1>
             Junior Full Stack Developer
-            <span class="hero-title-sub">Backend-Strong | Node.js | JavaScript</span>
+            <span class="hero-title-sub">Node.js | JavaScript | Learning React</span>
           </h1>
           <p class="hero-copy">
-            I build reliable backend systems and scalable web applications.<br />
-            Currently expanding into React, Vue and modern frontend technologies.
+            Backend-strong developer focused on reliable API logic and scalable web apps.<br />
+            Targeting junior full stack roles while actively deepening React skills.
           </p>
 
           <div class="hero-actions">
@@ -428,6 +544,9 @@ const currentYear = new Date().getFullYear()
             </div>
             <p class="experience-period">{{ item.period }}</p>
             <p class="experience-summary">{{ item.summary }}</p>
+            <ul v-if="item.highlights?.length" class="experience-points">
+              <li v-for="point in item.highlights" :key="point">{{ point }}</li>
+            </ul>
             <ul class="chip-list">
               <li v-for="tool in item.stack" :key="tool">{{ tool }}</li>
             </ul>
@@ -443,10 +562,20 @@ const currentYear = new Date().getFullYear()
             <p class="project-type">{{ project.type }}</p>
             <h3>{{ project.title }}</h3>
 
-            <p v-if="project.tech?.length" class="project-tech">
-              <strong>Tech:</strong> {{ project.tech.join(' | ') }}
-            </p>
-            <p v-if="project.summary" class="project-summary">{{ project.summary }}</p>
+            <div class="project-case-grid">
+              <article v-if="project.problem" class="project-case-card">
+                <p class="project-detail-title">Problem</p>
+                <p class="project-case-copy">{{ project.problem }}</p>
+              </article>
+              <article v-if="project.role" class="project-case-card">
+                <p class="project-detail-title">My Role</p>
+                <p class="project-case-copy">{{ project.role }}</p>
+              </article>
+              <article v-if="project.tech?.length" class="project-case-card">
+                <p class="project-detail-title">Tech Used</p>
+                <p class="project-case-copy">{{ project.tech.join(' | ') }}</p>
+              </article>
+            </div>
 
             <div v-if="project.whatIBuilt?.length" class="project-detail">
               <p class="project-detail-title">What I Built:</p>
@@ -455,10 +584,20 @@ const currentYear = new Date().getFullYear()
               </ul>
             </div>
 
-            <div v-if="project.impact?.length" class="project-detail">
-              <p class="project-detail-title">Impact:</p>
+            <div v-if="project.challengeSolutions?.length" class="project-detail">
+              <p class="project-detail-title">Challenges &amp; Solutions:</p>
+              <ul class="challenge-solution-list">
+                <li v-for="entry in project.challengeSolutions" :key="entry.challenge">
+                  <p class="challenge-title">{{ entry.challenge }}</p>
+                  <p class="solution-copy">{{ entry.solution }}</p>
+                </li>
+              </ul>
+            </div>
+
+            <div v-if="project.outcomes?.length" class="project-detail">
+              <p class="project-detail-title">Key Outcomes:</p>
               <ul class="project-list impact-list">
-                <li v-for="item in project.impact" :key="item">{{ item }}</li>
+                <li v-for="item in project.outcomes" :key="item">{{ item }}</li>
               </ul>
             </div>
 
@@ -478,8 +617,29 @@ const currentYear = new Date().getFullYear()
 
             <div class="project-links">
               <RouterLink :to="`/demo?project=${project.id}`">Check Demo</RouterLink>
+              <a
+                v-if="project.repository?.href"
+                :href="project.repository.href"
+                target="_blank"
+                rel="noreferrer"
+                >{{ project.repository.label }}</a
+              >
               <!-- <RouterLink :to="`/demo?project=${project.id}#screenshots`">See Images</RouterLink> -->
             </div>
+            <p v-if="project.repository?.note" class="project-source-note">
+              {{ project.repository.note }}
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="process" class="section reveal" style="--delay: 0.19s">
+        <p class="section-eyebrow">Process</p>
+        <h2>How I Build Projects</h2>
+        <div class="process-grid">
+          <article class="process-card" v-for="item in developmentProcess" :key="item.step">
+            <p class="process-step">{{ item.step }}</p>
+            <p class="process-detail">{{ item.detail }}</p>
           </article>
         </div>
       </section>
@@ -500,7 +660,7 @@ const currentYear = new Date().getFullYear()
 
       <section id="skills" class="section reveal" style="--delay: 0.22s">
         <p class="section-eyebrow">Skills</p>
-        <h2>Technical Skills</h2>
+        <h2>Tech Stack</h2>
         <div class="skill-grid">
           <article
             class="skill-card skill-group-card"
@@ -533,25 +693,29 @@ const currentYear = new Date().getFullYear()
         <p class="section-eyebrow">About</p>
         <div class="about-grid">
           <article class="about-intro-card">
-            <p class="about-kicker">Definitive Profile</p>
-            <h2>Backend-Strong Developer Focused on Business-Critical Systems</h2>
-            <p>
-              I build systems that stay reliable in production: structured APIs, predictable
-              business rules, and measurable outcomes tied to real operations.
-            </p>
-            <ul class="about-metrics">
-              <li v-for="item in aboutMetrics" :key="item.label">
-                <p class="about-metric-value">{{ item.value }}</p>
-                <p class="about-metric-label">{{ item.label }}</p>
+            <p class="about-kicker">Professional Summary</p>
+            <h2>Backend-Strong Junior Full Stack Developer</h2>
+            <p class="about-caption">{{ aboutSummary.caption }}</p>
+            <ul class="about-caption-list">
+              <li>
+                <p class="about-caption-title">Who I Am</p>
+                <p class="about-caption-copy">{{ aboutSummary.who }}</p>
+              </li>
+              <li>
+                <p class="about-caption-title">Target Job</p>
+                <p class="about-caption-copy">{{ aboutSummary.target }}</p>
+              </li>
+              <li>
+                <p class="about-caption-title">What I am Learning Next</p>
+                <p class="about-caption-copy">{{ aboutSummary.growth }}</p>
               </li>
             </ul>
           </article>
           <article class="about-card about-principles-card">
-            <h3>How I Work</h3>
+            <h3>What I Bring</h3>
             <ul class="about-principles-list">
-              <li v-for="item in aboutPrinciples" :key="item.title">
-                <p class="about-principle-title">{{ item.title }}</p>
-                <p class="about-principle-detail">{{ item.detail }}</p>
+              <li v-for="item in aboutHighlights" :key="item">
+                <p class="about-principle-detail">{{ item }}</p>
               </li>
             </ul>
           </article>
