@@ -1731,11 +1731,7 @@ h3,
 body {
   background:
     radial-gradient(1200px circle at 8% -10%, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0) 52%),
-    radial-gradient(
-      900px circle at 92% 0%,
-      rgba(59, 130, 246, 0.14),
-      rgba(59, 130, 246, 0) 46%
-    ),
+    radial-gradient(900px circle at 92% 0%, rgba(59, 130, 246, 0.14), rgba(59, 130, 246, 0) 46%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
 }
 
@@ -2060,24 +2056,6 @@ main {
   margin-top: 0.55rem;
   max-width: 60ch;
   color: var(--ink-soft);
-}
-
-.contact-badges {
-  margin-top: 0.72rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.42rem;
-}
-
-.contact-badges li {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.24rem 0.58rem;
-  font-size: 0.74rem;
-  color: var(--secondary);
-  background: rgba(37, 99, 235, 0.08);
-  font-weight: 600;
 }
 
 .contact-quick-actions {
@@ -2432,5 +2410,4 @@ main {
   .contact-quick-actions .btn {
     flex: 1 1 155px;
   }
-
 }

@@ -51,8 +51,7 @@ const projects = [
     tech: ['Node.js', 'MySQL', 'Socket.io', 'REST APIs'],
     problem:
       'HR workflows were spread across manual processes and disconnected records, causing delays and reporting bottlenecks.',
-    role:
-      'Designed backend logic and delivered full-stack HR modules for attendance, leave, and reporting workflows.',
+    role: 'Designed backend logic and delivered full-stack HR modules for attendance, leave, and reporting workflows.',
     whatIBuilt: [
       'Leave management system',
       'Attendance computation logic',
@@ -77,8 +76,7 @@ const projects = [
       },
       {
         challenge: 'Need for immediate visibility on approvals and attendance changes.',
-        solution:
-          'Integrated Socket.io event updates for real-time status synchronization.',
+        solution: 'Integrated Socket.io event updates for real-time status synchronization.',
       },
     ],
     outcomes: [
@@ -86,11 +84,6 @@ const projects = [
       'Reduced manual HR processing and operational delays.',
       'Centralized HR workflows into one maintainable system.',
     ],
-    repository: {
-      href: 'https://github.com/Chovvvy00?tab=repositories',
-      label: 'GitHub: HRIS Repository (Private)',
-      note: 'Private production repository due government system ownership.',
-    },
     architecture: [
       {
         layer: 'Backend API Layer',
@@ -129,8 +122,7 @@ const projects = [
     tech: ['Core PHP (Hardcoded)', 'Bootstrap', 'HTML', 'JavaScript'],
     problem:
       'The shelter needed a simple online platform to handle rescue and adoption requests instead of manual intake only.',
-    role:
-      'Built the end-to-end web platform using core PHP and Bootstrap, including request flows and admin-facing pages.',
+    role: 'Built the end-to-end web platform using core PHP and Bootstrap, including request flows and admin-facing pages.',
     whatIBuilt: [
       'Public-facing pet browsing interface',
       'Rescue and adoption request forms with server-side validation',
@@ -164,11 +156,6 @@ const projects = [
       'Reduced manual coordination with structured request records.',
       'Improved accessibility through responsive Bootstrap interfaces.',
     ],
-    repository: {
-      href: 'https://github.com/Chovvvy00?tab=repositories',
-      label: 'GitHub: Cookies Nest Repository',
-      note: 'Repository details can be shared based on project ownership permissions.',
-    },
     architecture: [
       {
         layer: 'Backend API Layer',
@@ -199,8 +186,7 @@ const projects = [
     tech: ['Vue.js', 'Laravel', 'MySQL', 'Real-Time Communication'],
     problem:
       'Users needed instant communication features with reliable messaging, group flow, and smooth conversation handling.',
-    role:
-      'Implemented frontend chat flows and integrated backend APIs to support real-time message delivery and conversation management.',
+    role: 'Implemented frontend chat flows and integrated backend APIs to support real-time message delivery and conversation management.',
     whatIBuilt: [
       'Authentication and conversation interface flows',
       'Live messaging screens with responsive conversation layout',
@@ -234,10 +220,6 @@ const projects = [
       'Improved UX with instant message updates and interaction feedback.',
       'Strengthened event-driven architecture and API integration skills.',
     ],
-    repository: {
-      href: 'https://github.com/Chovvvy00/Chat-APP',
-      label: 'GitHub: Chat-APP Repository',
-    },
     architecture: [
       {
         layer: 'Backend API Layer',
@@ -318,12 +300,14 @@ const developmentProcess = [
   },
   {
     step: '4. Test and Optimize',
-    detail: 'Validate core scenarios, refine edge cases, and improve performance for production use.',
+    detail:
+      'Validate core scenarios, refine edge cases, and improve performance for production use.',
   },
 ]
 
 const aboutSummary = {
-  caption: 'I build reliable backend systems that support daily operations and measurable outcomes.',
+  caption:
+    'I build reliable backend systems that support daily operations and measurable outcomes.',
   who: 'Backend-strong developer with 2+ years of hands-on experience building and maintaining production web systems.',
   target: 'Target Role: Junior Full Stack Developer (Node.js | JavaScript).',
   growth: 'Next Focus: React frontend architecture and Python backend fundamentals.',
@@ -380,11 +364,6 @@ const contactMethods = [
 ]
 
 const profileLinks = socials.filter((item) => ['GitHub', 'Facebook'].includes(item.label))
-const contactSignals = [
-  'Open to junior full-stack and backend roles',
-  'Usually replies within 24 hours',
-  'Timezone: GMT+8 (Philippines)',
-]
 
 const emailContact = contactMethods.find((item) => item.id === 'email')
 const phoneContact = contactMethods.find((item) => item.id === 'phone')
@@ -617,18 +596,8 @@ const currentYear = new Date().getFullYear()
 
             <div class="project-links">
               <RouterLink :to="`/demo?project=${project.id}`">Check Demo</RouterLink>
-              <a
-                v-if="project.repository?.href"
-                :href="project.repository.href"
-                target="_blank"
-                rel="noreferrer"
-                >{{ project.repository.label }}</a
-              >
               <!-- <RouterLink :to="`/demo?project=${project.id}#screenshots`">See Images</RouterLink> -->
             </div>
-            <p v-if="project.repository?.note" class="project-source-note">
-              {{ project.repository.note }}
-            </p>
           </article>
         </div>
       </section>
@@ -729,17 +698,11 @@ const currentYear = new Date().getFullYear()
           For job opportunities and interviews, email is the best channel. I usually reply within 24
           hours.
         </p>
-        <ul class="contact-badges">
-          <li v-for="signal in contactSignals" :key="signal">{{ signal }}</li>
-        </ul>
 
         <div class="contact-quick-actions">
           <a v-if="emailContact" class="btn btn-primary" :href="emailContact.href">Email Me</a>
           <a v-if="phoneContact" class="btn btn-ghost" :href="phoneContact.href">Call Me</a>
-          <a
-            v-if="phoneContact?.altHref"
-            class="btn btn-ghost-alt"
-            :href="phoneContact.altHref"
+          <a v-if="phoneContact?.altHref" class="btn btn-ghost-alt" :href="phoneContact.altHref"
             >Message on Viber</a
           >
         </div>
