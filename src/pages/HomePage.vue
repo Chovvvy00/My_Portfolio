@@ -4,6 +4,8 @@ import { ref } from 'vue'
 import { useTheme } from '../composables/useTheme'
 import resumeFile from '../assets/files/resume.pdf'
 import profilePhoto from '../assets/images/profile.png'
+import sailsLogo from '../assets/images/sails-logo.png'
+import laravelLogo from '../assets/images/laravel-logo.png'
 
 const experiences = [
   {
@@ -11,12 +13,12 @@ const experiences = [
     company: 'City Government of Calamba',
     period: 'Jan 2026 - Present',
     summary:
-      'Built and maintained Information System, improving HR operations and data management.',
+      'Built and maintained Human Resource Information System (HRIS), improving HR operations and data management.',
     highlights: [
-      'Maintained and enhanced HRIS modules used in daily government operations.',
-      'Improved stability and reporting flow through backend and database updates.',
+      'Maintained and enhanced HRIS modules used in CHRMO daily operations.',
+      'Ensure system is always up and running smoothly',
     ],
-    stack: ['Javascript', 'Pug.js', 'Sails.js', 'Node.js', 'Fomantic UI', 'REST API'],
+    stack: ['Javascript', 'Node.js', 'Sails.js', 'Pug.js','Fomantic UI', 'REST API', 'HTML', 'CSS'],
   },
   {
     role: 'Backend Developer',
@@ -25,10 +27,10 @@ const experiences = [
     summary:
       'Contributed to backend API development and database management for development of Human Resource Information System.',
     highlights: [
-      'Developed API endpoints and backend logic for attendance and leave workflows.',
-      'Worked on MySQL query improvements for faster HR report generation.',
+      'Developed API endpoints and backend logic for attendance module, leave application and other modules.',
+      'Worked on MySQL query improvements for faster DTR generation.',
     ],
-    stack: ['Sails.js', 'MySQL', 'REST API'],
+    stack: ['Node.js', 'Sails.js', 'MySQL', 'REST API', 'Postman', 'Workbench'],
   },
   {
     role: 'Web Developer Intern',
@@ -39,7 +41,7 @@ const experiences = [
       'Delivered working HR form modules and PDF generation flows during internship.',
       'Improved internal process speed through automation-focused web tools.',
     ],
-    stack: ['Javascript', 'Sails.js', 'Bootstrap', 'REST API'],
+    stack: ['Javascript', 'Sails.js', 'Pug.js', 'Bootstrap', 'REST API'],
   },
 ]
 
@@ -51,17 +53,21 @@ const projects = [
     tech: ['Node.js', 'MySQL', 'Socket.io', 'REST APIs'],
     problem:
       'HR workflows were spread across manual processes and disconnected records, causing delays and reporting bottlenecks.',
-    role: 'Designed backend logic and delivered full-stack HR modules for attendance, leave, and reporting workflows.',
+    role: 'Designed backend logic and delivered full-stack HR modules for attendance, leave, shifting, travel orders and other modules',
     whatIBuilt: [
+      'Employee Management module',
       'Leave management system',
+      'Shifting management',
       'Attendance computation logic',
-      'Automated DTR PDF generation',
+      'DTR generation',
+      'Authentication',
+      'Authorization',
       'Business validation rules',
     ],
     challenges: [
       'Complex attendance and leave policy rules needed deterministic validation.',
-      'Large datasets slowed report generation in peak usage.',
-      'Approval and attendance updates needed real-time visibility.',
+      'Large datasets and heavy JSON slowed report generation.',
+      'Designing database relationships for shift scheduling is tricky.',
     ],
     challengeSolutions: [
       {
@@ -75,12 +81,12 @@ const projects = [
           'Optimized query paths and report generation flow to reduce response time and load.',
       },
       {
-        challenge: 'Need for immediate visibility on approvals and attendance changes.',
-        solution: 'Integrated Socket.io event updates for real-time status synchronization.',
+        challenge: 'Designing database relationships for shift scheduling is complex.',
+        solution: 'Utilized AI tools like ChatGPT to explore suggestions and approaches for designing an effective shift scheduling database model.'
       },
     ],
     outcomes: [
-      'Improved report performance by 30-40%.',
+      'Improved accuracy of attendance logs and leave tracking in employee DTR sheet.',
       'Reduced manual HR processing and operational delays.',
       'Centralized HR workflows into one maintainable system.',
     ],
@@ -97,12 +103,7 @@ const projects = [
       },
       {
         layer: 'Frontend Interface',
-        detail: 'Server-rendered HR modules using Pug.js, Fomantic UI, Bootstrap, and JavaScript.',
-      },
-      {
-        layer: 'Real-time Communication',
-        detail:
-          'Socket.io events for instant attendance and approval status updates across active sessions.',
+        detail: 'Server-rendered HR modules using Pug.js, Fomantic UI, and JQuery.',
       },
       {
         layer: 'Document Generation Layer',
@@ -111,7 +112,7 @@ const projects = [
       {
         layer: 'Business Rules Layer',
         detail:
-          'Centralized validation for leave balances, schedule constraints, and HR policy checks.',
+          'Centralized validation for leave balances, schedule constraints, and HR/CSC policy checks.',
       },
     ],
   },
@@ -257,6 +258,8 @@ const skillGroups = [
     title: 'Backend',
     items: [
       { name: 'Node.js', logo: 'skills/nodejs.svg' },
+      { name: 'Sails.js', logo: sailsLogo },
+      { name: 'PHP Laravel', logo: laravelLogo },
       { name: 'REST APIs', badge: 'API' },
     ],
   },
@@ -314,10 +317,13 @@ const aboutSummary = {
 }
 
 const aboutHighlights = [
-  'I design APIs and business rules before UI complexity.',
-  'I own logic validation, data flow, and maintainability decisions.',
-  'I actively build modern projects to close skill gaps quickly.',
-]
+  'Design APIs and business rules first before introducing UI complexity.',
+  'Ensure proper validation, data flow, and maintainable backend logic.',
+  'Build RESTful APIs and structured backend systems using Node.js.',
+  'Develop responsive and functional interfaces that integrate with backend services.',
+  'Continuously build projects to improve full-stack development skills.',
+  'Write clean, organized code focused on long-term maintainability.',
+];
 
 const socials = [
   {
@@ -363,7 +369,7 @@ const contactMethods = [
   },
 ]
 
-const profileLinks = socials.filter((item) => ['GitHub', 'Facebook'].includes(item.label))
+const profileLinks = socials.filter((item) => ['Facebook'].includes(item.label))
 
 const emailContact = contactMethods.find((item) => item.id === 'email')
 const phoneContact = contactMethods.find((item) => item.id === 'phone')
@@ -478,11 +484,11 @@ const currentYear = new Date().getFullYear()
         <div class="hero-content">
           <h1>
             Junior Full Stack Developer
-            <span class="hero-title-sub">Node.js | JavaScript | Learning React</span>
+            <span class="hero-title-sub">Node.js | JavaScript | PHP</span>
           </h1>
           <p class="hero-copy">
-            Backend-strong developer focused on reliable API logic and scalable web apps.<br />
-            Targeting junior full stack roles while actively deepening React skills.
+            Aspiring Junior Full-Stack Developer with a strong interest in backend systems and API development.
+            Currently strengthening my frontend skills, particularly in React, to grow into a well-rounded full-stack developer.
           </p>
 
           <div class="hero-actions">
@@ -645,7 +651,7 @@ const currentYear = new Date().getFullYear()
                 <span class="skill-logo-wrap" :class="{ 'is-fallback': !item.logo }">
                   <img
                     v-if="item.logo"
-                    :src="withBase(item.logo)"
+                    :src="item.logo.endsWith('.svg') ? withBase(item.logo) : item.logo"
                     :alt="`${item.name} logo`"
                     loading="lazy"
                   />
@@ -663,7 +669,7 @@ const currentYear = new Date().getFullYear()
         <div class="about-grid">
           <article class="about-intro-card">
             <p class="about-kicker">Professional Summary</p>
-            <h2>Backend-Strong Junior Full Stack Developer</h2>
+            <h2>Aspiring Junior Full-Stack Developer with a Strong Backend Foundation</h2>
             <p class="about-caption">{{ aboutSummary.caption }}</p>
             <ul class="about-caption-list">
               <li>
