@@ -18,7 +18,16 @@ const experiences = [
       'Maintained and enhanced HRIS modules used in CHRMO daily operations.',
       'Ensure system is always up and running smoothly',
     ],
-    stack: ['Javascript', 'Node.js', 'Sails.js', 'Pug.js','Fomantic UI', 'REST API', 'HTML', 'CSS'],
+    stack: [
+      'Javascript',
+      'Node.js',
+      'Sails.js',
+      'Pug.js',
+      'Fomantic UI',
+      'REST API',
+      'HTML',
+      'CSS',
+    ],
   },
   {
     role: 'Backend Developer',
@@ -82,7 +91,8 @@ const projects = [
       },
       {
         challenge: 'Designing database relationships for shift scheduling is complex.',
-        solution: 'Utilized AI tools like ChatGPT to explore suggestions and approaches for designing an effective shift scheduling database model.'
+        solution:
+          'Utilized AI tools like ChatGPT to explore suggestions and approaches for designing an effective shift scheduling database model.',
       },
     ],
     outcomes: [
@@ -269,10 +279,7 @@ const skillGroups = [
   },
   {
     title: 'Learning',
-    items: [
-      { name: 'React', logo: 'skills/react.svg' },
-      { name: 'Python', logo: 'skills/python.svg' },
-    ],
+    items: [{ name: 'React', logo: 'skills/react.svg' }],
   },
 ]
 
@@ -284,6 +291,15 @@ const currentlyBuilding = [
       'Learning Python backend fundamentals',
       'Implementing role-based access and protected routes',
       'Integrating REST APIs with reusable service patterns',
+    ],
+  },
+  {
+    title: 'Laravel-Vue Ecommerece platform',
+    focus: [
+      'Exploring modern component-based architecture',
+      'Learning the depth and magic of laravel backend',
+      'Implementing role-based access control and protected routes',
+      'Integrating REST APIs using reusable service patterns',
     ],
   },
 ]
@@ -323,7 +339,7 @@ const aboutHighlights = [
   'Develop responsive and functional interfaces that integrate with backend services.',
   'Continuously build projects to improve full-stack development skills.',
   'Write clean, organized code focused on long-term maintainability.',
-];
+]
 
 const socials = [
   {
@@ -483,12 +499,14 @@ const currentYear = new Date().getFullYear()
       <section id="home" class="section hero reveal" style="--delay: 0.1s">
         <div class="hero-content">
           <h1>
-            Junior Full Stack Developer
-            <span class="hero-title-sub">Node.js | JavaScript | PHP</span>
+            Junior Web Developer
+            <span class="hero-title-sub">React.js | Vue.js | Laravel | Sails.js/Express.js</span>
           </h1>
           <p class="hero-copy">
-            Aspiring Junior Full-Stack Developer with a strong interest in backend systems and API development.
-            Currently strengthening my frontend skills, particularly in React, to grow into a well-rounded full-stack developer.
+            Junior Web Developer specializing in Sails.js and Fomantic UI, with a proven track
+            record of architecting complex systems like a custom HRIS. I am currently expanding my
+            toolkit with React, Vue, and Laravel to build more dynamic, modern interfaces. Skilled
+            in REST API integration and implementing secure role-based access control.
           </p>
 
           <div class="hero-actions">
